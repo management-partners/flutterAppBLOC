@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutterApp/blocs/categories_bloc.dart';
 import 'package:flutterApp/pages/home_page.dart';
+import 'package:flutterApp/widgets/bloc_provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +17,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home:HomePage(),
+      home: BlocProvider(
+        child: HomePage(), 
+        bloc: CatgoriesBloc()),
     );
   }
 }
